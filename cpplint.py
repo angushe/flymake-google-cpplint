@@ -1391,7 +1391,7 @@ def GetHeaderGuardCPPVariable(filename):
   file_path_from_root = fileinfo.RepositoryName()
   if _root:
     file_path_from_root = re.sub('^' + _root + os.sep, '', file_path_from_root)
-  return re.sub(r'[-./\s]', '_', file_path_from_root).upper() + '_'
+  return '_' + re.sub(r'[-./\s]', '_', file_path_from_root).upper() + '_'
 
 
 def CheckForHeaderGuard(filename, lines, error):
