@@ -4732,7 +4732,8 @@ def ParseArguments(args):
 
 
 def main():
-  filenames = ParseArguments(sys.argv[1:])
+  args = filter(bool, sys.argv[1:])
+  filenames = ParseArguments(args)
 
   # Change stderr to write with replacement characters so we don't die
   # if we try to print something containing non-ASCII characters.
